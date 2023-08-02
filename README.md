@@ -1,4 +1,20 @@
-# CodeIgniter 4 Application Starter
+
+## Easy Setup
+
+- Make sure you have ``php`` , ``composer`` installed.
+- Navidate into the main folder & run ``composer install `` if this is the first time
+- once this is done, run ``php spark serve ``
+- that is it.
+
+## Contributing
+
+- First make a fork of the repository
+- Work on your branch , make sure you have the latest version of this branch
+- push and make a Pull Request.
+
+
+
+## CodeIgniter 4 Application Starter
 
 ## What is CodeIgniter?
 
@@ -60,3 +76,4 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 - json (enabled by default - don't turn it off)
 - [mysqlnd](http://php.net/manual/en/mysqlnd.install.php) if you plan to use MySQL
 - [libcurl](http://php.net/manual/en/curl.requirements.php) if you plan to use the HTTP\CURLRequest library
+
