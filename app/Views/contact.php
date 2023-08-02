@@ -18,6 +18,8 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
   <!-- Main Stylesheet -->
   <link href="assets/style.css" rel="stylesheet" media="screen" />
+  <link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
+
 </head>
 
 <body>
@@ -61,10 +63,8 @@
 
 					
 
-<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 				</div>
 
-<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 			
 				<div class="col-lg-4 col-sm-6 mb-4">
 					<a href="" class="px-4 py-5 bg-white shadow text-center d-block match-height">

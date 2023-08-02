@@ -98,7 +98,7 @@ $(document).ready( function () {
                 <td><?php echo $processeddata->Year; ?></td>
                 <td><?php echo $processeddata->Attributes; ?></td>
                 <td><?php echo $processeddata->Applicability; ?></td>
-                <td><?php echo $processeddata->Benefits; ?></td>
+                <td><?php echo $processeddata->UsesAndBenefits; ?></td>
                 <td><?php echo $processeddata->Contact; ?></td>
                 <td><?php echo $processeddata->Telephone; ?></td>
                 

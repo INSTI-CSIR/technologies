@@ -108,7 +108,7 @@ $(document).ready( function () {
                 <td><?php echo $cropdata->Attributes; ?></td>
                 <td><?php echo $cropdata->Seedcolour; ?></td>
                 <td><?php echo $cropdata->Maturity_in_days; ?></td>
-                <td><?php echo $cropdata->Potential_yield; ?></td>
+                <td><?php echo $cropdata->Potential_yield_ton_per_ha; ?></td>
                 <td><?php echo $cropdata->Applicability; ?></td>
                 
                

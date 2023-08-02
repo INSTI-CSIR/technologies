@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8">
-  <title>faq</title>
+  <title>FAQ's</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- ** CSS Plugins Needed for the Project ** -->
@@ -18,18 +18,21 @@
   <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
   <!-- Main Stylesheet -->
   <link href="assets/style.css" rel="stylesheet" media="screen" />
+  <link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 </head>
 
 <body>
   <!-- header -->
   <header class="shadow-bottom sticky-top bg-white">
-    <nav class="navbar navbar-expand-md navbar-light">
+    <!--<nav class="navbar navbar-expand-md navbar-light">-->
+
+	<nav class="navbar navbar-expand-md navbar-dark">
+  <a class="navbar-brand" href="/">
+    <img src="images/csirlogo.png" alt="CSIR Logo" style="width: 120px; height: auto;">
+  </a>
       <div class="container">
-        <a class="navbar-brand px-2" href="index.html">FAQ</a>
-        <button class="navbar-toggler border-0" type="button" data-toggle="collapse" data-target="#navigation"
-          aria-controls="navigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+        <a class="navbar-brand px-2" href="index.html">Contact Us</a>
+       
 
         <div class="collapse navbar-collapse text-center" id="navigation">
           <ul class="navbar-nav ml-auto">
@@ -42,18 +45,15 @@
             <li class="nav-item">
               <a class="nav-link text-dark" href="/contact">contact</a>
             </li>
-						<li class="nav-item">
-							<a class="nav-link text-dark" href="/about">About</a>
-						</li>
+			
           </ul>
         </div>
       </div>
     </nav>
   </header>
   <!-- /header -->
-
   <!-- faq -->
-  <section class="section pb-0">
+  <section class="section">
     <div class="container">
       <div class="row">
         <div class="col-12">

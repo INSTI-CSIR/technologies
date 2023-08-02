@@ -25,6 +25,8 @@
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<!-- Main Stylesheet -->
 	<link href="assets/style.css" rel="stylesheet" media="screen" />
+	<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
+
 </head>
 
 <body>
@@ -66,11 +68,10 @@
 	
 		<div class="container section">
 
-<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 			<div class="row">
 				<div class="col-lg-8 text-center mx-auto">
 					<h1 class="text-white mb-3">CSIR TECHNOLOGIES</h1>
-					<p class="text-white mb-4">Find advice and answers from  our Research Scientists</p>
+					<p class="text-white mb-4">Find technologies Generated from Research done within the CSIR</p>
 					<div class="position-relative">
 						<form method="get" action="/search">
   <div class="wrapper">
@@ -104,14 +105,13 @@
 		<div class="container">
 			<div class="row justify-content-center">
 				<div class="col-12 text-center">
-					<h2 class="section-title">Find your answer by subject</h2>
+					<h2 class="section-title">Find Technologies by subject</h2>
 
 					
 
 <link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 				</div>
 
-<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 				<!-- topic-item -->
 				<div class="col-lg-4 col-sm-6 mb-4">
 					<a href="/maincropvarieties" class="px-4 py-5 bg-white shadow text-center d-block match-height">
@@ -169,7 +169,7 @@
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-8 text-md-left text-center">
-					<
+					
 				</div>
 				<div class="col-md-4 text-md-right text-center">
 				<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
