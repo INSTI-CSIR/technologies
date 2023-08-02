@@ -6,7 +6,7 @@
                 <h4>Agro Inputs</h4>
                 <hr>
 
-                <form class="" action="/agroinputs" method="post">
+                <form class="" action="/agroinput" method="post">
                     <div class="form-group">
                         <label for="Shopname">Shopname</label>
                         <div class="input-group">
@@ -77,7 +77,7 @@
                     <div class="col-12 col-sm-4">
     <button type="submit" class="btn btn-primary">Save</button>
     <?php echo form_close(); ?>
-    <?php echo anchor('/agroinputs', 'Cancel', array('class' => 'btn btn-secondary')); ?>
+    <?php echo anchor('/dashboard', 'Cancel', array('class' => 'btn btn-secondary')); ?>
 </div>
                         
 <div class="col-12 col-sm-8 text-right">
