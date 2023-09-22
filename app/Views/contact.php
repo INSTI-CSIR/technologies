@@ -1,58 +1,21 @@
-<!DOCTYPE html>
-<html lang="en-us">
+<?php include('templates/main_header.php'); ?>
 
-<head>
-  <meta charset="utf-8">
-  <title>Contact</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<div class="container ">
 
-  <!-- ** CSS Plugins Needed for the Project ** -->
+  <div class="row">
+    <div class="col-lg-8 text-center mx-auto">
+    <a class="navbar-brand" href="/">
+          <img src="images/csirlogo.png" alt="CSIR Logo" style="width: 120px; height: auto;">
+        </a>
 
-  <!-- Bootstrap -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <!-- themefy-icon -->
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-  <!--Favicon-->
-  <link rel="icon" href="images/favicon.png" type="image/x-icon">
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
-  <!-- Main Stylesheet -->
-  <link href="assets/style.css" rel="stylesheet" media="screen" />
-  <link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 
-</head>
 
-<body>
-  <!-- header -->
-  <header class="shadow-bottom sticky-top bg-white">
-    <!--<nav class="navbar navbar-expand-md navbar-light">-->
+    </div>
+  </div>
+</div>
 
-	<nav class="navbar navbar-expand-md navbar-dark">
-  <a class="navbar-brand" href="/">
-    <img src="images/csirlogo.png" alt="CSIR Logo" style="width: 120px; height: auto;">
-  </a>
-      <div class="container">
-        <a class="navbar-brand px-2" href="index.html">Contact Us</a>
-       
+</header>
 
-        <div class="collapse navbar-collapse text-center" id="navigation">
-          <ul class="navbar-nav ml-auto">
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="/">Home</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="/faq">Faq</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-dark" href="/contact">contact</a>
-            </li>
-			
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-  <!-- /header -->
 
 
 	<section class="section">
@@ -112,40 +75,4 @@ please do not hesitate to send us a message, call or come right up to our doorst
 			</div>
 		</div>
 	</section>
-
-  <!-- footer -->
-  <footer class="section pb-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-md-8 text-md-left text-center">
-          <p class="mb-md-0 mb-4"> <a
-              href=""></a></p>
-        </div>
-        <div class="col-md-4 text-md-right text-center">
-          <ul class="list-inline">
-            <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="http://facebook.com/insti.csir100"><i
-                  class="ti-facebook"></i></a></li>
-            <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://twitter.com/csir_insti100"><i
-                  class="ti-twitter-alt"></i></a></li>
-            <li class="list-inline-item"><a class="text-color d-inline-block p-2" href="https://www.instagram.com/insti_csir/"><i class="ti-instagram"></i></a>
-            </li>
-           
-          </ul>
-        </div>
-      </div>
-    </div>
-  </footer>
-  <!-- /footer -->
-
-  <!-- ** JS Plugins Needed for the Project ** -->
-  <!-- jquiry -->
-  <script src="plugins/jquery/jquery-1.12.4.js"></script>
-  <!-- Bootstrap JS -->
-  <script src="plugins/bootstrap/bootstrap.min.js"></script>
-  <!-- match-height JS -->
-  <script src="plugins/match-height/jquery.matchHeight-min.js"></script>
-  <!-- Main Script -->
-  <script src="assets/script.js"></script>
-</body>
-
-</html>
+  <?php include('templates/main_footer.php'); ?>
