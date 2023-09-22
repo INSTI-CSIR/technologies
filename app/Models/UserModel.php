@@ -122,6 +122,18 @@ public function getAllMarket()
 
 }
 
+
+public function getAllAgro()
+{
+   $db = db_connect();
+   $builder = $db->table('agroInput');
+   $query = $builder->get();
+   return $query->getResult();
+   $db->close();
+
+
+}
+
 //Retrive data from User table for login process
 public function getLogin($email)
 {

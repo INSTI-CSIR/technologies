@@ -1,14 +1,10 @@
 <!DOCTYPE html>
 <html lang="en-us">
-<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
 
 <head>
 	<meta charset="utf-8">
 	<title>Home</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	
-<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
-
   
   <!-- theme meta -->
   <meta name="theme-name" content="dot" />

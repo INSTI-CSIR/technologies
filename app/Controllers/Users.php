@@ -20,8 +20,6 @@ class Users extends BaseController
     {
         $this->UserModel = new UserModel();
         $this->searchModel = new SearchModel();
-
-        
     }
 
     // Home page
@@ -32,8 +30,8 @@ class Users extends BaseController
         return view('home', $data);
     }
 
-    
-     // Search functionality
+
+    // Search functionality
     public function search()
     {
         $searchQuery = $this->request->getVar('query'); // Retrieve search query
@@ -43,23 +41,23 @@ class Users extends BaseController
 
         // Pass search results to the view
         $data['searchResults'] = $searchResults;
-         
+
 
         // Load the search view and pass the data
         return view('search', $data);
     }
 
-      // Dashboard page
+    // Dashboard page
     public function dashboard()
     {
         $data = [];
         helper(['form']);
 
         $url = route_to('dashboard');
-    
-        
-       
-        return view('dashboard', ['url' => $url]); 
+
+
+
+        return view('dashboard', ['url' => $url]);
     }
 
     // Crop varieties data input  page
@@ -69,9 +67,8 @@ class Users extends BaseController
         helper(['form']);
         $model = new UserModel();
         $data['cropVarieties'] = $model->getAll();
-        
-        if ($this->request->getMethod() == 'post') 
-        {
+
+        if ($this->request->getMethod() == 'post') {
             // Get form input data
             $newData = [
                 'Technology' => $this->request->getVar('Technology'),
@@ -88,64 +85,57 @@ class Users extends BaseController
                 'Email' => $this->request->getVar('Email'),
                 'WebsiteFax' => $this->request->getVar('WebsiteFax'),
             ];
-    
-            if ($model->insertCropVariety($newData))
-            {
+
+            if ($model->insertCropVariety($newData)) {
                 $session = session();
                 $session->setFlashdata('success', 'Crop variety added successfully.');
                 return redirect()->to('/cropvarieties');
-            }
-          else
-            {
+            } else {
                 $data['error'] = 'Failed to add crop variety.';
             }
         }
-    
+
         echo view('templates/header', $data);
         echo view('cropvarieties', $data);
         echo view('templates/footer', $data);
     }
-    
 
-     // Agro Inputs data input page
+
+    // Agro Inputs data input page
     public function agroinput()
-{
-    $data = [];
-    helper(['form']);
-    $model = new UserModel();
+    {
+        $data = [];
+        helper(['form']);
+        $model = new UserModel();
         $data['agroInputs'] = $model->getAll();
 
-    if ($this->request->getMethod() == 'post') 
-    {
-        
-         // Get form input data
-        $newData = [
-            'Shopname' => $this->request->getVar('Shopname'),
-            'ProductSold' => $this->request->getVar('ProductSold'),
-            'Phone Number' => $this->request->getVar('Phone Number'),
-            'Association' => $this->request->getVar('Association'),
-            'Location' => $this->request->getVar('Location'),
-            'ProductCategory' => $this->request->getVar('ProductCategory'),
-            'Fertilizers' => $this->request->getVar('Fertilizers'),
-            'Implements' => $this->request->getVar('Implements'),
-        ];
+        if ($this->request->getMethod() == 'post') {
 
-        if ($model->insertAgroInputs($newData)) 
-        {
-            $session = session();
-            $session->setFlashdata('success', 'Agro Input added successfully.');
-            return redirect()->to('/agroinputs');
+            // Get form input data
+            $newData = [
+                'Shopname' => $this->request->getVar('Shopname'),
+                'ProductSold' => $this->request->getVar('ProductSold'),
+                'Phone Number' => $this->request->getVar('Phone Number'),
+                'Association' => $this->request->getVar('Association'),
+                'Location' => $this->request->getVar('Location'),
+                'ProductCategory' => $this->request->getVar('ProductCategory'),
+                'Fertilizers' => $this->request->getVar('Fertilizers'),
+                'Implements' => $this->request->getVar('Implements'),
+            ];
+
+            if ($model->insertAgroInputs($newData)) {
+                $session = session();
+                $session->setFlashdata('success', 'Agro Input added successfully.');
+                return redirect()->to('/agroinputs');
+            } else {
+                $data['error'] = 'Failed to add crop variety.';
+            }
         }
-       else
-        {
-            $data['error'] = 'Failed to add crop variety.';
-        }
+
+        echo view('templates/header', $data);
+        echo view('agroinputs', $data);
+        echo view('templates/footer', $data);
     }
-
-    echo view('templates/header', $data);
-    echo view('agroinputs', $data);
-    echo view('templates/footer', $data);
-}
 
     // Processed Foods data input page
     public function processedfoods()
@@ -157,9 +147,8 @@ class Users extends BaseController
 
         $model = new UserModel();
         $data['processedFoods'] = $model->getAll();
-    
-        if ($this->request->getMethod() == 'post') 
-        {
+
+        if ($this->request->getMethod() == 'post') {
             // Get form input data
             $newData = [
                 'Technology' => $this->request->getVar('Technology'),
@@ -172,22 +161,19 @@ class Users extends BaseController
                 'Email' => $this->request->getVar('Email'),
                 'Website' => $this->request->getVar('Website'),
             ];
-    
-            if ($model->insertProcessedFoods($newData)) 
-            {
+
+            if ($model->insertProcessedFoods($newData)) {
                 $session = session();
                 $session->setFlashdata('success', 'Processed Foods added successfully.');
                 return redirect()->to('/processedfoods');
-            } 
-           else 
-            {
+            } else {
                 $data['error'] = 'Failed to add Processed Foods.';
             }
         }
 
-        
 
-        
+
+
         echo view('templates/header', $data);
         echo view('processedfoods', $data);
         echo view('templates/footer', $data);
@@ -203,40 +189,36 @@ class Users extends BaseController
         $model = new UserModel();
         $data['marketableTechnologies'] = $model->getAll();
 
-          
-        if ($this->request->getMethod() == 'post')
-         {
+
+        if ($this->request->getMethod() == 'post') {
             // Get form input data
             $newData = [
                 'Technologies' => $this->request->getVar('Technologies'),
-                
+
                 'Year' => $this->request->getVar('Year'),
-                
+
             ];
-    
-            if ($model->insertMarketableTechnologies($newData))
-            {
+
+            if ($model->insertMarketableTechnologies($newData)) {
                 $session = session();
                 $session->setFlashdata('success', 'Other Technologies added successfully.');
                 return redirect()->to('/marketabletechnologies');
-            }
-          else
-            {
+            } else {
                 $data['error'] = 'Failed to add Other Technologies.';
             }
         }
-     
-        
-    
-        
+
+
+
+
         echo view('templates/header', $data);
         echo view('marketabletechnologies', $data);
         echo view('templates/footer', $data);
     }
 
-    
+
     // Other Technologies data input page
-      public function otherTechnologies()
+    public function otherTechnologies()
 
 
     {
@@ -245,9 +227,8 @@ class Users extends BaseController
 
         $model = new UserModel();
         $data['otherTechnologies'] = $model->getAll();
-    
-        if ($this->request->getMethod() == 'post') 
-        {
+
+        if ($this->request->getMethod() == 'post') {
             //Get form input data
             $newData = [
                 'Technology' => $this->request->getVar('Technology'),
@@ -261,66 +242,68 @@ class Users extends BaseController
                 'GPS' => $this->request->getVar('GPS'),
                 'Category' => $this->request->getVar('Category'),
             ];
-            
-    
+
+
             if ($model->insertOtherTechnologies($newData)) {
                 $session = session();
                 $session->setFlashdata('success', 'Other Technologies added successfully.');
                 return redirect()->to('/othertechnologies');
-            } 
-           else
-            {
+            } else {
                 $data['error'] = 'Failed to add Other Technologies.';
             }
         }
 
-        
 
-        
+
+
         echo view('templates/header', $data);
         echo view('othertechnologies', $data);
         echo view('templates/footer', $data);
     }
 
-     // AgroInputs page
+    // AgroInputs page
     public function mainagroinputs()
     {
-        $data = [];
-        helper(['form']);
-        return view('mainagroinputs', $data);  
-       
+        
+        $agroData = new UserModel();
+        $data = [
+            'page_tittle' => 'Agro Inputs',
+            'agrodatas' => $agroData->getAllAgro()
+
+        ];
+        return view('mainagroinputs', $data);
     }
 
-     // Crop varieties page
+    // Crop varieties page
     public function maincropvarieties()
     {
         $data = [];
         helper(['form']);
-        return view('maincropvarieties', $data);   
+        return view('maincropvarieties', $data);
     }
 
-     // Marketable Technologies  page
+    // Marketable Technologies  page
     public function mainmarketable()
     {
         $data = [];
         helper(['form']);
-        return view('mainmarketable', $data); 
+        return view('mainmarketable', $data);
     }
 
-     // Other Technologies page
+    // Other Technologies page
     public function mainothertechnologies()
     {
         $data = [];
         helper(['form']);
-        return view('mainothertechnologies', $data);    
+        return view('mainothertechnologies', $data);
     }
 
-     // Processed Foods page
+    // Processed Foods page
     public function mainprocessedfoods()
     {
         $data = [];
         helper(['form']);
-        return view('mainprocessedfoods', $data); 
+        return view('mainprocessedfoods', $data);
     }
 
     // Frequently asked questions page
@@ -328,7 +311,7 @@ class Users extends BaseController
     {
         $data = [];
         helper(['form']);
-        return view('faq', $data);  
+        return view('faq', $data);
     }
 
     //Contact Us page 
@@ -336,214 +319,185 @@ class Users extends BaseController
     {
         $data = [];
         helper(['form']);
-        return view('contact', $data);  
+        return view('contact', $data);
     }
 
-// User login
-public function login()
-{
-    $request = request();
-    helper(['form', 'url']);
-
-    if ($request->is('post')) 
+    // User login
+    public function login()
     {
-       
-        $data = [];
+        $request = request();
+        helper(['form', 'url']);
 
-        $validationRules = [
-            'email' => 'required',
-            'password' => 'required'
-        ];
+        if ($request->is('post')) {
 
+            $data = [];
 
-        if ($this->validate($validationRules)) {
-            $email = $request->getPost('email');
-            $password = $request->getPost("password");
-         
-            
-
-            $user_model = new UserModel();
-            $result = $user_model->getLogin($email);
-           
-
-            if ((!empty($result)) && (password_verify($password,$result->password)) ) 
-            {
-               
-                return redirect()->to('/dashboard');
-            } 
-            else 
-            {
-               
-                $session = session();
-                $session->setFlashdata('p_error', 'Wrong Email or Password');
-                $session->markAsFlashdata('p_error');
-               
-
-                return redirect()->back();
-                
-            }
-
-        } 
-        else 
-        {
-            $data['validation'] = $this->validator;
-        }
-    } 
-    else 
-    {
-        
-    echo view('templates/header');
-    echo view('login');
-    echo view('templates/footer');
-    }
-
-   
-}
-  
-   
-  // User registration
-public function register()
-{
-    $data = [];
-    helper(['form']);
-
-    // Load the RecaptchaRules class
-    helper('recaptcharules');
-
-    if ($this->request->getMethod() == 'post') {
-        // Define the validation rules
-        $rules = [
-            'username' => 'required',
-            'fullname' => 'required',
-            'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.email]',
-            'password' => 'required',
-            'password_confirm' => 'matches[password]',
-            'g-recaptcha-response' => 'validateRecaptcha', // Add the custom validation rule for reCAPTCHA
-        ];
-
-        // Set the custom error messages for the reCAPTCHA validation rule
-        $errors = [
-            'g-recaptcha-response' => [
-                'validateRecaptcha' => 'Please complete the reCAPTCHA verification.',
-            ],
-        ];
-
-        if ($this->validate($rules, $errors)) {
-            // Validation passed, proceed with registration logic
-
-            // Create a new instance of the UserModel
-            $model = new UserModel();
-
-            // Prepare the data for insertion
-            $newData = [
-                'username' => $this->request->getVar('username'),
-                'fullname' => $this->request->getVar('fullname'),
-                'email' => $this->request->getVar('email'),
-                'password' => $this->passwordHash($this->request->getVar('password')), // Hash the password
+            $validationRules = [
+                'email' => 'required',
+                'password' => 'required'
             ];
 
-            // Insert the data into the database
-            $model->insertdata($newData);
 
-            $session = session();
-            $session->setFlashdata('success', 'Successful Registration');
-            return redirect()->to('/login');
+            if ($this->validate($validationRules)) {
+                $email = $request->getPost('email');
+                $password = $request->getPost("password");
+
+
+
+                $user_model = new UserModel();
+                $result = $user_model->getLogin($email);
+
+
+                if ((!empty($result)) && (password_verify($password, $result->password))) {
+
+                    return redirect()->to('/dashboard');
+                } else {
+
+                    $session = session();
+                    $session->setFlashdata('p_error', 'Wrong Email or Password');
+                    $session->markAsFlashdata('p_error');
+
+
+                    return redirect()->back();
+                }
+            } else {
+                $data['validation'] = $this->validator;
+            }
         } else {
-            $data['validation'] = $this->validator;
+
+            echo view('templates/header');
+            echo view('login');
+            echo view('templates/footer');
         }
     }
 
-    echo view('templates/header', $data);
-    echo view('register', $data);
-    echo view('templates/footer', $data);
+
+    // User registration
+    public function register()
+    {
+        $data = [];
+        helper(['form']);
+
+        // Load the RecaptchaRules class
+        helper('recaptcharules');
+
+        if ($this->request->getMethod() == 'post') {
+            // Define the validation rules
+            $rules = [
+                'username' => 'required',
+                'fullname' => 'required',
+                'email' => 'required|min_length[6]|max_length[50]|valid_email|is_unique[users.email]',
+                'password' => 'required',
+                'password_confirm' => 'matches[password]',
+                'g-recaptcha-response' => 'validateRecaptcha', // Add the custom validation rule for reCAPTCHA
+            ];
+
+            // Set the custom error messages for the reCAPTCHA validation rule
+            $errors = [
+                'g-recaptcha-response' => [
+                    'validateRecaptcha' => 'Please complete the reCAPTCHA verification.',
+                ],
+            ];
+
+            if ($this->validate($rules, $errors)) {
+                // Validation passed, proceed with registration logic
+
+                // Create a new instance of the UserModel
+                $model = new UserModel();
+
+                // Prepare the data for insertion
+                $newData = [
+                    'username' => $this->request->getVar('username'),
+                    'fullname' => $this->request->getVar('fullname'),
+                    'email' => $this->request->getVar('email'),
+                    'password' => $this->passwordHash($this->request->getVar('password')), // Hash the password
+                ];
+
+                // Insert the data into the database
+                $model->insertdata($newData);
+
+                $session = session();
+                $session->setFlashdata('success', 'Successful Registration');
+                return redirect()->to('/login');
+            } else {
+                $data['validation'] = $this->validator;
+            }
+        }
+
+        echo view('templates/header', $data);
+        echo view('register', $data);
+        echo view('templates/footer', $data);
+    }
+
+    // Hash the password
+    protected function passwordHash($password)
+    {
+        return password_hash($password, PASSWORD_DEFAULT);
+    }
+
+    // Validate reCAPTCHA response
+    private function validateRecaptcha($response, $secretKey)
+    {
+        $recaptcha = new ReCaptcha($secretKey);
+        $result = $recaptcha->verify($response, $_SERVER['REMOTE_ADDR']);
+
+        return [
+            'success' => $result->isSuccess(),
+            'error' => $result->getErrorCodes(),
+        ];
+    }
+
+    //Display Cropvaritiy data from database    
+    public function viewcrop()
+    {
+
+        $cropData = new UserModel();
+        $data = [
+            'page_tittle' => 'cropVarieties',
+            'cropdatas' => $cropData->getAllCrop()
+
+        ];
+        return view('maincropvarieties', $data);
+    }
+
+    //Display Processed foods data from database 
+    public function viewprocessed()
+    {
+
+        $processedData = new UserModel();
+        $data = [
+            'page_tittle' => 'processedfoods',
+            'processeddatas' => $processedData->getAllProcessed()
+
+        ];
+        return view('mainprocessedfoods', $data);
+    }
+
+    //Display Other Technologies data from database 
+    public function viewother()
+    {
+
+        $otherData = new UserModel();
+        $data = [
+            'page_tittle' => 'othertechnologies',
+            'otherdatas' => $otherData->getAllOther()
+
+        ];
+        return view('mainothertechnologies', $data);
+    }
+
+    //Display Marketable Technologies  data from database 
+    public function viewmarket()
+    {
+
+        $marketData = new UserModel();
+        $data = [
+            'page_tittle' => 'marketabletechnologies',
+            'marketdatas' => $marketData->getAllMarket()
+
+        ];
+        return view('mainmarketable', $data);
+    }
+
+      
 }
-
-// Hash the password
-protected function passwordHash($password)
-{
-    return password_hash($password, PASSWORD_DEFAULT);
-}
-
- // Validate reCAPTCHA response
-private function validateRecaptcha($response, $secretKey)
-{
-    $recaptcha = new ReCaptcha($secretKey);
-    $result = $recaptcha->verify($response, $_SERVER['REMOTE_ADDR']);
-
-    return [
-        'success' => $result->isSuccess(),
-        'error' => $result->getErrorCodes(),
-    ];
-}
-  
-//Display Cropvaritiy data from database    
-public function viewcrop()
-{
-
-    $cropData = new UserModel();
-    $data = [
-       'page_tittle' => 'cropVarieties',
-       'cropdatas' => $cropData->getAllCrop()
-
-    ];
-    return view('maincropvarieties', $data);
-}
-
-//Display Processed foods data from database 
-public function viewprocessed()
-{
-
-    $processedData = new UserModel();
-    $data = [
-       'page_tittle' => 'processedfoods',
-       'processeddatas' => $processedData->getAllProcessed()
-
-    ];
-    return view('mainprocessedfoods', $data);
-}
-
-//Display Other Technologies data from database 
-public function viewother()
-{
-
-    $otherData = new UserModel();
-    $data = [
-       'page_tittle' => 'othertechnologies',
-       'otherdatas' => $otherData->getAllOther()
-
-    ];
-    return view('mainothertechnologies', $data);
-}
-
-//Display Marketable Technologies  data from database 
-public function viewmarket()
-{
-
-    $marketData = new UserModel();
-    $data = [
-       'page_tittle' => 'marketabletechnologies',
-       'marketdatas' => $marketData->getAllMarket()
-
-    ];
-    return view('mainmarketable', $data);
-}
-    
-}
- 
-
-
-
-
-
-
-
-    
-    
-     
-
- 
-
-
-
-    
-

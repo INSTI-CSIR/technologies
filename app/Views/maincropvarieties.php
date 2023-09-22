@@ -7,6 +7,7 @@
         <a class="navbar-brand" href="/">
           <img src="images/csirlogo.png" alt="CSIR Logo" style="width: 120px; height: auto;">
         </a>
+        <br><br>
 
         <h1 class="text-white mb-3">CSIR Crop Varieties</h1>
         
