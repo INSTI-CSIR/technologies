@@ -3,7 +3,7 @@
 
 <head>
 	<meta charset="utf-8">
-	<title>Home</title>
+	<title>CSIR Technologies</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   
   <!-- theme meta -->
@@ -22,8 +22,7 @@
 	<link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.css" />
 
 	<!-- Main Stylesheet -->
-	<link href="assets/style.css" rel="stylesheet" media="screen" />
-	<link rel="stylesheet" href="<?= base_url('assets/styles.css') ?>">
+	<link rel="stylesheet" href="assets/styles.css"/>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
 <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.js"></script>

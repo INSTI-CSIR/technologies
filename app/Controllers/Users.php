@@ -309,7 +309,7 @@ class Users extends BaseController
     // Frequently asked questions page
     public function faq()
     {
-        $data = [];
+        $data = ['page_title' => 'FAQ'];
         helper(['form']);
         return view('faq', $data);
     }
@@ -317,7 +317,7 @@ class Users extends BaseController
     //Contact Us page 
     public function contact()
     {
-        $data = [];
+        $data = ['page_title' => 'Contact'];
         helper(['form']);
         return view('contact', $data);
     }
@@ -453,7 +453,7 @@ class Users extends BaseController
 
         $cropData = new UserModel();
         $data = [
-            'page_tittle' => 'cropVarieties',
+            'page_title' => 'Crop Varieties',
             'cropdatas' => $cropData->getAllCrop()
 
         ];
@@ -466,7 +466,7 @@ class Users extends BaseController
 
         $processedData = new UserModel();
         $data = [
-            'page_tittle' => 'processedfoods',
+            'page_title' => 'Processed Foods',
             'processeddatas' => $processedData->getAllProcessed()
 
         ];
@@ -479,7 +479,7 @@ class Users extends BaseController
 
         $otherData = new UserModel();
         $data = [
-            'page_tittle' => 'othertechnologies',
+            'page_title' => 'Other Technologies',
             'otherdatas' => $otherData->getAllOther()
 
         ];
@@ -492,7 +492,7 @@ class Users extends BaseController
 
         $marketData = new UserModel();
         $data = [
-            'page_tittle' => 'marketabletechnologies',
+            'page_title' => 'Marketable Technologies',
             'marketdatas' => $marketData->getAllMarket()
 
         ];
